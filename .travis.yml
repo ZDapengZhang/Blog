@@ -14,7 +14,7 @@ install:
   - wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb
   - sudo dpkg -i hugo*.deb
   # 安装主题
-  - git clone [https://github.com/vaga/hugo-theme-m10c]
+  - git clone https://github.com/vaga/hugo-theme-m10c
 
 script:
   # 运行hugo命令
@@ -24,8 +24,8 @@ after_script:
   # 部署
   - cd ./public
   - git init
-  - git config user.name "[ZDapengZhang]"
-  - git config user.email "[zhangdapeng2222@gmail.com]"
+  - git config user.name "ZDapengZhang"
+  - git config user.email "zhangdapeng2222@gmail.com"
   - git add .
   - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
   # Github Pages
@@ -36,7 +36,7 @@ after_script:
 env:
  global:
    # Github Pages
-   - GH_REF: [https://github.com/ZDapengZhang/zdapengzhang.github.io]
+   - GH_REF: https://github.com/ZDapengZhang/zdapengzhang.github.io
 
 deploy:
   provider: pages # 重要，指定这是一份github pages的部署配置
